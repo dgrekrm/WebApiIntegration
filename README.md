@@ -8,4 +8,7 @@ Nuget Packages:
 
 Please clean and rebuild solution before using.
 
+I prefer Postman to test methods.
+https://www.getpostman.com/
+
 You can contact me about questions: ekrem.deger15@gmail.com
