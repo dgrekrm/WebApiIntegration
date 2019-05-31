@@ -11,7 +11,8 @@ namespace WebApiIntegration
     {
         protected void Application_Start()
         {
-            GlobalConfiguration.Configure(WebApiConfig.Register);
+            //The reason of comment out above line is that it's also calling from Owin Startup
+            //GlobalConfiguration.Configure(WebApiConfig.Register);
         }
     }
 }
