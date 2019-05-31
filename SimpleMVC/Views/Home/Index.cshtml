@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<button class="btn btn-default" type="button" onclick="getBooks();">Get Books</button>
+
+<div id="books">
+
+</div>
+
+<script>
+    function getBooks() {
+        var token = prompt("token","token");
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:50163/api/Book/GetBooks",
+            headers: {
+                'Authorization': token
+            },
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+                $('#books').html("Basarili: <br/>");
+                result.forEach(function (item) {
+                    $('#books').append("Id: " + item.Id + "; Title: " + item.Title + "<br/>");
+                })
+            },
+            failure: function (response) {
+                console.log(response);
+                $('#books').html(response.responseText);
+            },
+            error: function (response) {
+                console.log(response);
+                $('#books').html(response.responseText);
+            }
+        });
+    }
+</script>

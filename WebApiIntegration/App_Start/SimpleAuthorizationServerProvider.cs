@@ -10,7 +10,8 @@ namespace WebApiIntegration.App_Start {
         }
 
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context) {
-            context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
+            context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "http://localhost:54762" });
+            //context.OwinContext.Response.Headers.Add("Access-Control-Allow-Credentials", new[] { "true" });
 
             if(context.UserName == "edeger" && context.Password == "Password1") {
 

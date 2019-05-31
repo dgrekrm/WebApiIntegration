@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using System.Web.Http;
 using Microsoft.Owin;
+using Microsoft.Owin.Cors;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
 
@@ -10,6 +11,9 @@ using Owin;
 namespace WebApiIntegration.App_Start {
     public class Startup {
         public void Configuration(IAppBuilder app) {
+
+            app.UseCors(CorsOptions.AllowAll);
+
             var config = new HttpConfiguration();
             ConfigureOAuth(app);
 
