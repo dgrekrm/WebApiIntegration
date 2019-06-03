@@ -3,6 +3,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinApp.App">
     <Application.Resources>
-
+        <ControlTemplate x:Key="SimpleTemplate">
+            <!--<Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.05*" />
+                    <RowDefinition Height="0.9*" />
+                    <RowDefinition Height="0.05*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.25*" />
+                    <ColumnDefinition Width="0.5*" />
+                </Grid.ColumnDefinitions>
+                <BoxView Grid.ColumnSpan="2" Color="Black" />
+                <Label Grid.Column="1" Text="Xamarin App" TextColor="White" VerticalOptions="Center" />
+                <ContentPresenter Grid.Row="1" Grid.ColumnSpan="2" />
+                <BoxView Grid.Row="2" Grid.ColumnSpan="2" Color="Black" />
+                <Label Grid.Row="2" Grid.Column="1" Text="(c) Xamarin 2019" TextColor="White" VerticalOptions="Center" />
+            </Grid>-->
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.075*"></RowDefinition>
+                    <RowDefinition Height="0.85*"></RowDefinition>
+                    <RowDefinition Height="0.075*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <BoxView Grid.Row="0" Color="BlueViolet"></BoxView>
+                <ContentPresenter Grid.Row="1"></ContentPresenter>
+                <BoxView Grid.Row="2" Color="BlueViolet"></BoxView>
+            </Grid>
+        </ControlTemplate>
     </Application.Resources>
 </Application>

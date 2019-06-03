@@ -4,8 +4,8 @@
              xmlns:local="clr-namespace:XamarinApp"
              x:Class="XamarinApp.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
+    <ContentView x:Name="contentView" Padding="0,0,0,0" ControlTemplate="{StaticResource SimpleTemplate}">
+        <StackLayout>
         <Label x:Name="ErrorMessage" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
@@ -16,16 +16,13 @@
                         <ViewCell.View>
                             <Grid>
                                 <Grid Grid.Column="0">
-                                    <Label Text="{Binding Id}"
-                                                   TextColor="Black"/>
+                                    <Label Text="{Binding Id}" TextColor="Black"/>
                                 </Grid>
                                 <Grid Grid.Column="1">
-                                    <Label Text="{Binding Title}"
-                                                   TextColor="Black"/>
+                                    <Label Text="{Binding Title}" TextColor="Black"/>
                                 </Grid>
                                 <Grid Grid.Column="2">
-                                    <Label Text="{Binding Category}"
-                                                   TextColor="Black"/>
+                                    <Label Text="{Binding Category}" TextColor="Black"/>
                                 </Grid>
                             </Grid>
                         </ViewCell.View>
@@ -34,5 +31,6 @@
             </ListView.ItemTemplate>
         </ListView>
     </StackLayout>
+    </ContentView>
 
 </ContentPage>
