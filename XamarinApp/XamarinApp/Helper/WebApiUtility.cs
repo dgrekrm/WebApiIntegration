@@ -9,7 +9,7 @@ using XamarinApp.LocalModels;
 namespace XamarinApp.Helper {
     public class WebApiUtility {
         private static HttpClient client = new HttpClient();
-        private static readonly string baseUrl = "http://10.0.2.2:81";
+        private static readonly string baseUrl = "http://192.168.1.2:81";
         private static string access_token = string.Empty;
         public static async Task<string> GetToken(string userName, string password) {
             var serviceUrl = $"{baseUrl}/token";
