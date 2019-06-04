@@ -6,31 +6,40 @@
 
     <ContentView x:Name="contentView" Padding="0,0,0,0" ControlTemplate="{StaticResource SimpleTemplate}">
         <StackLayout>
-        <Label x:Name="ErrorMessage" 
+            <Label x:Name="ErrorMessage" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
-        <ListView x:Name="Books" ItemsSource="{Binding .}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <ViewCell.View>
-                            <Grid>
-                                <Grid Grid.Column="0">
-                                    <Label Text="{Binding Id}" TextColor="Black"/>
+            <ListView x:Name="Books" ItemsSource="{Binding .}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Grid>
+                                    <Grid>
+                                        <Grid Grid.Column="0">
+                                            <Label Text="{Binding Id}" TextColor="Black"/>
+                                        </Grid>
+                                        <Grid Grid.Column="1">
+                                            <Label Text="{Binding Title}" TextColor="Black"/>
+                                        </Grid>
+                                        <Grid Grid.Column="2">
+                                            <Label Text="{Binding Category}" TextColor="Black"/>
+                                        </Grid>
+                                    </Grid>
+                                    <ActivityIndicator 
+                                    x:Name="activityIndicator" 
+                                    IsRunning="{Binding IsBusy}"
+                                    VerticalOptions="Center"
+                                    HorizontalOptions="Center"
+                                    Color="Blue"
+                                    ></ActivityIndicator>
                                 </Grid>
-                                <Grid Grid.Column="1">
-                                    <Label Text="{Binding Title}" TextColor="Black"/>
-                                </Grid>
-                                <Grid Grid.Column="2">
-                                    <Label Text="{Binding Category}" TextColor="Black"/>
-                                </Grid>
-                            </Grid>
-                        </ViewCell.View>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
     </ContentView>
 
 </ContentPage>
